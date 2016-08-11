@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    body {
+      max-width: 550px;
+      margin: 0 auto;
+      font-family: 'STHeitiSC Light','HelveticaNeue Light','Helvetica Light','Helvetica Neue', Helvetica,'Microsoft YaHei', Arial, sans-serif;
+      font-size: 16px;
+      background: #eeefef;
+      -webkit-user-select: none;
+      -webkit-text-size-adjust: 100% !important;
+      background-color: #fafafa;
+      font-size-adjust: none;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, input, q, b, dl, dt, dd, ol, ul, li, form, label, canvas {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+    }
+
+    input, textarea {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    #main {
+      padding: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+    #main-header {
+      width: 100%;
+    }
+
+    #main-header img {
+      display: block;
+      width: 100%;
+    }
+
+    #main-content {
+      width: 100%;
+      padding-bottom: 6.4%;
+      background: #e35d4c url('https://static.udache.com/gulfstream/webapp/modules/channel-gift-new/images/version-two/bg_top.png') 0 0 no-repeat;
+      background-size: contain;
+    }
+
+    #main-logo {
+      width: 100%;
+      padding-top: 7.3333%;
+    }
+
+    #main-logo-img {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+
+    #main-title {
+      width: 100%;
+      margin-top: 6.6667%;
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    #main-sub {
+      width: 100%;
+      margin: 2% 0 6.6667%;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    #main-phone {
+      display: inline-block;
+      width: 85%;
+      height: 20px;
+      padding: 10px 0;
+      border-radius: 25px;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .main-wrap {
+      width: 100%;
+      margin-bottom: 3.333%;
+    }
+
+    #main-btn {
+      display: inline-block;
+      width: 85%;
+      height: 40px;
+      border-radius: 25px;
+      font-size: 15px;
+      line-height: 40px;
+      color: #fff;
+      background: #fa8910;
+    }
+
+    #main-tips {
+      display: inline-block;
+      width: 100%;
+      margin-top: 1.3333%;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    #main-tips-checkbox:checked {
+      background: url('https://static.udache.com/gulfstream/webapp/modules/channel-gift-new/images/version-two/checked.png') 0 0 no-repeat;
+      background-size: contain;
+    }
+
+    #main-tips-checkbox {
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      margin: 0 3px 0 0;
+      position: relative;
+      top: 1px;
+      border: none;
+      background: url('https://static.udache.com/gulfstream/webapp/modules/channel-gift-new/images/version-two/unchecked.png') 0 0 no-repeat;
+      background-size: contain;
+    }
+
+    #main-tips-link {
+      font-size: 12px;
+      text-decoration: underline;
+      color: rgba(255,255,255,0.7);
+    }
+
+    #footer {
+      width: 100%;
+      height: 72px;
+      padding: 25px 0 0 0;
+      background: url('https://static.udache.com/gulfstream/webapp/modules/channel-gift-new/images/footer_bg.jpg') left top repeat-x;
+      background-size: contain;
+    }
+
+    #footer-tips {
+      font-size: 12px;
+      color: #666;
+    }
+
+    #footer-link {
+      font-size: 12px;
+      text-decoration: underline;
+      color: #666;
+    }
+
+    #footer-logo {
+      display: block;
+      width: 116px;
+      margin: 0 auto 5px;
+    }
+
+    .didi-dialog-wall {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      z-index: 9998;
+    }
+
+    .didi-dialog-wrap {
+      box-sizing: border-box;
+      text-align: center;
+      position: absolute;
+      border-radius: 5px;
+      -webkit-border-radius: 8px;
+      background: #e8e7e6;
+      display: none;
+      z-index: 9999;
+    }
+
+    .dialog-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      background: #f0f0f0;
+    }
+
+    .dialog-icon:before {
+      content: "";
+      display: block;
+      background: url(https://static.udache.com/gulfstream/webapp/css/image/dialog-icon.gif);
+      background-size: 40px;
+      width: 40px;
+      height: 40px;
+      margin: 10px;
+    }
+
+    .didi-dialog-footer {
+      margin: 18px 0;
+    }
+
+    .didi-dialog-footer a {
+      cursor: default;
+      display: inline-block;
+      margin: 0;
+      width: 90px;
+      height: 43px;
+      line-height: 43px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .btn-orange {
+      color: #fff;
+      border: 1px solid #ed8000;
+      background: #ed8000;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="main">
+      <div id="main-header" style="background:url(http://static.udache.com/gulfstream/upload/2016/share_logo_url/201607/share_logo_url1467960067.54755646.jpg) center 0px / 100% no-repeat;">
+      <img src="https://static.udache.com/gulfstream/webapp/modules/channel-gift-new/images/version-two/header_bg.gif" alt="" id="main-header-bg">
+      </div>
+      <div id="main-content">
+        <section id="main-logo">
+          <img src="http://static.xiaojukeji.com/gulfstream/upload/2015/share_logo_url/201510/share_logo_url1444981555.png" alt="" id="main-logo-img" onerror="onImgError(this);">
+        </section>
+        <p id="main-title">滴滴出行，全国通勤</p>
+        <p id="main-sub">周一到周五快车专属券</p>
+        <section class="main-wrap">
+          <input type="tel" id="main-phone" maxlength="11" placeholder="输入手机号，领取红包">
+        </section>
+        <section class="main-wrap">
+          <span id="main-btn">点击领取滴滴大礼包</span>
+        </section>
+        <section id="main-tips">
+          <label>
+            <input type="checkbox" id="main-tips-checkbox">
+            我已阅读并同意滴滴出行的
+          </label>
+          <a href="https://static.udache.com/gulfstream/webapp/modules/channel-gift-new/activity-rules.html" id="main-tips-link">[活动规则]</a>
+        </section>
+      </div>
+    </div>
+    <footer id="footer">
+      <img id="footer-logo" src="http://static.udache.com/gulfstream/webapp/modules/channel-gift-new/images/footer_logo.png" alt="">
+      <p id="footer-tips">客服电话 <a id="footer-link" href="tel:4000000999">400-000-0999</a></p>
+    </footer>
+  </div>
+
+  <div id="d_wall" class="didi-dialog-wall" style="opacity:0.2; width:376px; height:806px; display: none; background-color:black;"></div>
+  <div id="d_wrap" dialog-type="alert" class="didi-dialog-wrap" style="width:280px; height: auto; top:164.5px; left:48px; display:none; background-color:rgb(255,255,255);">
+    <div style="padding: 0px 16px;">
+      <p class="didi_dialog_icon" style="margin:20px 0px 12px 0">
+        <span class="dialog-icon icon-alert" style="display: inline-block; width:61px;height:61px; background-size:61px 61px;"></span>
+      </p>
+      <p class="didi-dialog-p" style="color:#666666;font-size:1.1em;">请输入正确的手机号码！</p>
+      <div id="d_dialog_footer" class="didi-dialog-footer">
+        <a class="btn-orange" id="btn_close" style="width: 100%;">我知道了</a>
+      </div>
+    </div>
+  </div>
+<script>
+  var btn = document.getElementById('main-btn'),
+    close = document.getElementById('btn_close'),
+    dWall = document.getElementById('d_wall'),
+    dWrap = document.getElementById('d_wrap');
+
+  close.addEventListener('click',function() {
+    dWall.style.display = 'none';
+    dWrap.style.display = 'none';
+  },false);
+
+
+  btn.addEventListener('click',function() {
+    var phoneNum = document.getElementById('main-phone').value;
+    if(!(/^1[3|4|5|7|8]\d{9}$/.test(phoneNum))){
+      dWall.style.display = 'block';
+      dWrap.style.display = 'block';
+      return;
+    } else {
+      alert('输入成功');
+    }
+  },false);
+</script>
+</body>
+</html>
